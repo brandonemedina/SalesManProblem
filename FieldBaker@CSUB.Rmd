@@ -1,7 +1,7 @@
 ---
 title: "Field Baker's day at campus"
-author: "Dr. J"
-date: "4/17/2020"
+author: "Brandon Medina"
+date: "5/02/2020"
 output: html_document
 ---
 
@@ -29,9 +29,26 @@ The stops he must make and the North, East coordinates of each are givnen in the
    
    
 ```{r}
+y = c(25,110,250,250,300,260,280)
+x = c(200,160,200,300,250,50,290)
+rrx = c(160,110,290)
+rry = c(200,340,280)
 
 ```
 
    
+```{r}
+tourMAT = ETSP(data.frame(x, y))
+tourSolve = solve_TSP(tourMAT)
+tour_length(tourSolve)
+plot(tourMAT, tourSolve )
+points(rrx,rry,col='red',pch=19)
+grid()
+print(tourSolve)
+```
+   
+Answer 
+
+When Field visits the campus the shortest route for him to take to visit all his stops as well as one bathromm is 823.56 cubits. His route would start at the bust stop, then to Engineering Complex, Administration building, Dorothy Donahue, Walter Stern, bathroom at 280,290, and finally to the student union, before returning to the bus stop.    
    
    
